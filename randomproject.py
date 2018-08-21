@@ -20,6 +20,3 @@ def select_random(items):
 def write_out(string):
     with open("last-promoted-project.txt", "a") as file:
         file.write(string + "\n")
-
-
-print select_project()
