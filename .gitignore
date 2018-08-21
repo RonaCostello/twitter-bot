@@ -1,2 +1,3 @@
 last-promoted-project.txt
 secrets*
+*.pyc
