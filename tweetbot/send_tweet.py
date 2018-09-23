@@ -6,6 +6,11 @@ import sys, pdb, pprint
 import requests
 import os
 
+def tweet_no_image(message):
+    api = twitter_api()
+    api.update_status(status = message)
+
+
 def tweet_image(url, message):
     api = twitter_api()
     filename = 'temp.jpg'
@@ -26,13 +31,18 @@ def twitter_api():
     return tweepy.API(auth)
 
 
-
-
 if __name__ == '__main__':
 
     project = random_project()
+    print "intro:"
+    print project.introduction
     avatar = project.avatar
     avatar_url = avatar['media'][0]['src']
-    message = "Check out this project"
+    simple_message = "Check out " + project.title + " on the Zooniverse " + "https://www.zooniverse.org/projects/" + project.slug
+    descriptive_message = "Check out " + project.title + " on the Zooniverse - " + project.description + " https://www.zooniverse.org/projects/" + project.slug
 
-    tweet_image(avatar_url, message)
+    tweet_image(avatar_url, descriptive_message)
+    tweet_no_image(descriptive_message)
+
+
+# # pp.pprint(project.__dict__)
