@@ -1,3 +1,7 @@
 last-promoted-project.txt
 secrets*
 *.pyc
+bin/*
+lib/*
+pip-selfcheck.json
+pyvenv.cfg
