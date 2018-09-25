@@ -3,8 +3,11 @@
 from panoptes_client import Project
 import random
 
+project_list = []
+
 def random_project():
-    project_list = []
+    if project_list:
+        return(random.choice(project_list))
     for project in Project.where(launch_approved=True):
         if not project.redirect:
             if incompleteness(project) > 500:
