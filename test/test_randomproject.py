@@ -22,7 +22,6 @@ class TestRandomProject(unittest.TestCase):
 
     def test_project_completedness(self, msg = 'Project should have a completeness score of less than 1'):
         self.assertLess( self.project.completeness, 1.0)
-        
 
 if __name__ == '__main__':
     unittest.main()
