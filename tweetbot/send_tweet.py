@@ -54,7 +54,7 @@ def tweet_no_image(message):
 if __name__ == '__main__':
 
     message_pt1 = "Check out the project "
-    message_pt2 = " on the Zooniverse! "
+    message_pt2 = " on the Zooniverse: "
     message_len = len(message_pt1 + message_pt2)
 
     project = fetch_random_project_max_len_280(message_len)
