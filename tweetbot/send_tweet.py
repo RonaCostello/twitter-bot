@@ -52,6 +52,7 @@ def tweet_no_image(message):
 
 
 if __name__ == '__main__':
+    project = fetch_random_project_max_len_280(1)
 
     message_pt1 = "Check out the project "
     message_pt2 = " on the Zooniverse: "
@@ -64,7 +65,8 @@ if __name__ == '__main__':
     simple_tweet = message_pt1 + project.title + message_pt2
     descriptive_tweet = simple_tweet + project.description
 
+    # randomly tweet with a message or not
     tweet = random.choice([simple_tweet, descriptive_tweet]) + " https://www.zooniverse.org/projects/" + project.slug
 
     tweet_image(project, tweet)
-    tweet_no_image(tweet)
+    # tweet_no_image(tweet)
